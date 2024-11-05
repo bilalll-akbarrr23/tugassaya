@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Web Design Mastery | SoulTravel</title>
+  </head>
+  <body>
+
+    <!-- Modal Pendaftaran -->
+<div id="signInModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Formulir Pendaftaran</h2>
+    <form id="signUpForm">
+      <label for="username">Nama Pengguna:</label>
+      <input type="text" id="username" name="username" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="password">Kata Sandi:</label>
+      <input type="password" id="password" name="password" required />
+
+      <button type="submit">Daftar</button>
+    </form>
+  </div>
+</div>
+    <nav>
+      <div class="nav__header">
+        <div class="nav__logo">
+          <a href="#">Sport<span>Easy</span>.</a>
+        </div>
+        <div class="nav__menu__btn" id="menu-btn">
+          <span><i class="ri-menu-line"></i></span>
+        </div>
+      </div>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="#" id="destination-btn">Destination</a></li>
+        <li><a href="#" id="package-link">Package</a></li>
+        <li><a href="#" id="blog-link">Blog</a></li>
+        <li><a href="https://www.instagram.com/_mhdakbar15/" target="_blank">Instagram</a></li> <!-- Tambahkan link Instagram di sini -->
+        <li><a href="https://wa.me/6282214909890" target="_blank">Contact</a></li> <!-- Ganti link ke nomor WA Anda -->
+    </ul>
+    
+    <!-- Tambahkan Deskripsi Destination di sini -->
+    <div class="destination-description" style="display: none;">
+      <h2>Destination</h2>
+      <p>
+          "Selamat datang di platform pendaftaran olahraga kami, tempat di mana pengalaman olahraga terbaik dimulai! Di website kami, Anda dapat menjelajahi berbagai destinasi olahraga yang menawarkan beragam aktivitas menarik, mulai dari kegiatan petualangan hingga relaksasi. Setiap lokasi yang kami tawarkan telah dipilih secara cermat untuk memberikan pengalaman yang tak terlupakan, dengan fasilitas modern dan layanan terbaik untuk memenuhi kebutuhan Anda. Dengan antarmuka yang ramah pengguna dan informasi yang lengkap, Anda dapat dengan mudah menemukan destinasi yang sesuai dengan minat dan kebutuhan Anda. Apakah Anda seorang pencinta olahraga ekstrem yang mencari tantangan di alam bebas, atau mungkin Anda lebih suka aktivitas yang lebih santai seperti yoga di tepi pantai? Kami memiliki semuanya untuk Anda! Bergabunglah dengan komunitas kami dan nikmati penawaran eksklusif serta akses ke event olahraga di lokasi-lokasi impian. Daftar sekarang dan mulai petualangan olahraga Anda bersama kami, karena setiap langkah menuju kesehatan dan kebugaran dimulai dengan pilihan yang tepat. Temukan destinasi Anda hari ini dan raih pengalaman olahraga yang luar biasa!"
+      </p>
+  </div>
+ <!-- Tambahkan Deskripsi Package di sini -->
+<div class="package-description" style="display: none;">
+  <h2>Package</h2>
+  <div class="package">
+      <img src="assets/nama_file_gambar.png" alt="Paket Olahraga" class="package-image" />
+      <div class="package-info">
+          <h3>Package Olahraga Petualangan</h3>
+          <p>Harga: IDR 1.500.000</p>
+          <h4>Fasilitas:</h4>
+          <ul>
+              <li>Transportasi ke lokasi</li>
+              <li>Peralatan olahraga</li>
+              <li>Makanan dan minuman</li>
+              <li>Penginapan selama 2 malam</li>
+          </ul>
+          <h4>Aktivitas:</h4>
+          <ul>
+              <li>Hiking</li>
+              <li>Rafting</li>
+              <li>Camping</li>
+          </ul>
+      </div>
+  </div>
+</div>
+
+<!-- Tambahkan Deskripsi Blog di sini -->
+<div class="blog-description" style="display: none;">
+  <h2>Blog Olahraga</h2>
+  <div class="blog-images">
+      <img src="assets/gambar_olahraga1.png" alt="Olahraga 1" class="blog-image" />
+      <img src="assets/gambar_olahraga2.webp" alt="Olahraga 2" class="blog-image" />
+      <img src="assets/gambar_olahraga3.webp" alt="Olahraga 3" class="blog-image" />
+  </div>
+</div>
+
+ 
+  
+    </div>
+      <div class="nav__btns">
+        <button class="btn sign__up">Sign Up</button>
+        <button class="btn sign__in" id="open-modal-btn">Sign In</button> <!-- Tombol Sign In dengan ID -->
+      </div>
+    </nav>
+    <header class="header__container">
+      <div class="header__image">
+        <div class="header__image__card header__image__card-1">
+          <span><i class="ri-key-line"></i></span>
+          Boking Sekarang 
+        </div>
+        <div class="header__image__card header__image__card-2">
+          <span><i class="ri-passport-line"></i></span>
+          Daftar Sekarang
+        </div>
+        <div class="header__image__card header__image__card-3">
+          <span><i class="ri-map-2-line"></i></span>
+          Buruan daftar
+        </div>
+        <div class="header__image__card header__image__card-4">
+          <span><i class="ri-guide-line"></i></span>
+          Tunggu apa lagi
+        </div>
+        <img src="assets/header1.png" alt="header" />
+      </div>
+      <div class="header__content">
+        <h1>"Siap Beraksi?<br />Keseruan <span>Olahraga </span> Menunggumu!</h1>
+        <p>
+          "Ayo Bergerak! Daftar dan Nikmati Beragam Fasilitas Olahraga."
+        </p>
+        <form action="/">
+          <div class="input__row">
+            <div class="input__group">
+              <h5>Destination</h5>
+              <div>
+                <span><i class="ri-map-pin-line"></i></span>
+                <input type="text" placeholder="Blang Krueng, Aceh" />
+              </div>
+            </div>
+            <div class="input__group">
+              <h5>Date</h5>
+              <div>
+                <span><i class="ri-calendar-2-line"></i></span>
+                <input type="text" placeholder="24 jam" />
+              </div>
+            </div>
+          </div>
+          <button type="submit">Search</button>
+        </form>
+        <div class="bar">
+          Copyright © 2024 Web Design Mastery. All rights reserved.
+        </div>
+      </div>
+    </header>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
