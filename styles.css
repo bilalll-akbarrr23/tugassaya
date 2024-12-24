@@ -1,468 +1,115 @@
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-
 :root {
-  --primary-color: #ff833e;
-  --primary-color-dark: #db6f35;
-  --text-dark: #333333;
-  --text-light: #767268;
-  --white: #ffffff;
-  --max-width: 1200px;
-  --header-font: "Bebas Neue", sans-serif;
-}
-
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-img {
-  display: flex;
-  width: 100%;
-}
-
-a {
-  text-decoration: none;
-  transition: 0.3s;
+  --primary-color: #ff833e; /* Warna primer untuk elemen penting */
+  --white: #ffffff; /* Warna putih untuk teks dan latar belakang */
+  --dark-color: #333; /* Warna gelap untuk teks */
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: Arial, sans-serif; /* Font untuk seluruh halaman */
+  margin: 0; /* Menghilangkan margin default */
+  padding: 0; /* Menghilangkan padding default */
+  color: var(--dark-color); /* Warna teks menggunakan variabel */
+  line-height: 1.6; /* Jarak antar baris untuk keterbacaan */
 }
 
 nav {
-  position: fixed;
-  isolation: isolate;
-  width: 100%;
-  z-index: 9;
-}
-
-.nav__header {
-  padding: 1rem;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: var(--primary-color);
+  background: var(--primary-color); /* Latar belakang nav dengan warna primer */
+  padding: 1rem; /* Padding untuk nav */
 }
 
 .nav__logo a {
-  font-size: 1.75rem;
-  font-weight: 400;
-  font-family: var(--header-font);
-  color: var(--white);
-}
-
-.nav__menu__btn {
-  font-size: 1.5rem;
-  color: var(--white);
-  cursor: pointer;
+  color: var(--white); /* Warna teks logo */
+  text-decoration: none; /* Menghilangkan garis bawah */
+  font-size: 1.5rem; /* Ukuran font logo */
 }
 
 .nav__links {
-  position: absolute;
-  top: 64px;
-  left: 0;
-  width: 100%;
-  padding: 2rem;
-  list-style: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 2rem;
-  background-color: var(--primary-color);
-  transition: 0.5s;
-  z-index: -1;
-  transform: translateY(-100%);
+  display: none; /* Tautan nav disembunyikan secara default */
+  list-style: none; /* Menghilangkan bullet points */
+  padding: 0; /* Menghilangkan padding */
 }
 
 .nav__links.open {
-  transform: translateY(0);
+  display: block; /* Menampilkan tautan saat dibutuhkan */
 }
 
 .nav__links a {
-  font-weight: 500;
-  color: var(--white);
+  color: var(--white); /* Warna teks untuk tautan */
+  text-decoration: none; /* Menghilangkan garis bawah */
+  padding: 0.5rem 1rem; /* Ruang dalam tautan */
+  display: block; /* Membuat tautan mengambil seluruh lebar */
+  transition: background-color 0.3s; /* Transisi halus untuk efek hover */
 }
 
 .nav__links a:hover {
-  color: var(--text-dark);
-}
-
-.nav__btns {
-  display: none;
+  background-color: rgba(255, 255, 255, 0.2); /* Efek hover untuk tautan */
 }
 
 .header__container {
-  max-width: var(--max-width);
-  margin: auto;
-  padding-block: 8rem 2rem;
-  padding-inline: 1rem;
-  display: grid;
-  gap: 2rem;
-  overflow-x: hidden;
+  text-align: center; /* Pusatkan teks di dalam header */
+  padding: 2rem; /* Ruang di dalam header */
 }
 
-.header__image {
-  position: relative;
-  isolation: isolate;
+.hidden {
+  display: none; /* Kelas untuk menyembunyikan elemen */
 }
 
-.header__image::before {
-  position: absolute;
-  content: "";
-  width: 100%;
-  max-width: 550px;
-  aspect-ratio: 1;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-image: url("assets/header-bg.png");
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
-  border-radius: 100%;
-  opacity: 0.5;
-  z-index: -1;
-}
-
-.header__image img {
-  max-width: 520px;
-  margin-inline: auto;
-}
-
-.header__image__card {
-  position: absolute;
-  padding: 0.75rem 1rem;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: var(--text-dark);
-  background-color: var(--white);
-  white-space: nowrap;
-  border-radius: 5px;
-  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-}
-
-.header__image__card span {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--primary-color);
-}
-
-.header__image__card-1 {
-  top: 25%;
-  left: 0;
-  transform: translate(-50%, -50%);
-}
-
-.header__image__card-2 {
-  top: 10%;
-  right: 2rem;
-  transform: translateY(-50%);
-}
-
-.header__image__card-3 {
-  top: 60%;
-  left: 0;
-  transform: translateY(-50%);
-}
-
-.header__image__card-4 {
-  top: 70%;
-  right: 0;
-  transform: translateY(-50%);
-}
-
-.header__content h1 {
-  margin-bottom: 1rem;
-  font-size: 5rem;
-  font-weight: 400;
-  font-family: var(--header-font);
-  color: var(--text-dark);
-  line-height: 5.5rem;
-  text-align: center;
-}
-
-.header__content h1 span {
-  color: var(--primary-color);
-}
-
-.header__content p {
-  margin-bottom: 2rem;
-  columns: var(--text-light);
-  line-height: 1.75rem;
-  text-align: center;
-}
-
-.header__content form {
-  margin-bottom: 4rem;
-  padding: 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: column;
-  gap: 1rem 0;
-  border-radius: calc(1rem + 10px);
-  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
-}
-
-.header__content .input__row {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  flex: 1;
-}
-
-.header__content .input__group {
-  flex: 1;
-}
-
-.header__content .input__group h5 {
-  margin-bottom: 5px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--text-light);
-}
-
-.header__content .input__group > div {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.header__content input {
-  width: 100%;
-  outline: none;
-  border: none;
-  font-size: 1rem;
-  background-color: transparent;
-}
-
-.header__content input::placeholder {
-  font-weight: 600;
-  color: var(--text-dark);
-}
-
-.header__content .input__group span {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: var(--primary-color);
-}
-
-.header__content button {
-  width: 100%;
-  padding: 1rem 2rem;
-  outline: none;
-  border: none;
-  font-size: 1rem;
-  white-space: nowrap;
-  color: var(--white);
-  background-color: var(--primary-color);
-  border-radius: 10px;
-  transition: 0.3s;
-  cursor: pointer;
-}
-
-.header__content button:hover {
-  background-color: var(--primary-color-dark);
-}
-
-.header__content .bar {
-  font-size: 0.9rem;
-  color: var(--text-light);
-  text-align: center;
-}
-
-@media (width > 768px) {
-  nav {
-    position: static;
-    padding-block: 2rem 0;
-    padding-inline: 1rem;
-    max-width: var(--max-width);
-    margin-inline: auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
-  }
-
-  .nav__header {
-    flex: 1;
-    padding: 0;
-    background-color: transparent;
-  }
-
-  .nav__logo a {
-    color: var(--text-dark);
-  }
-
-  .nav__logo a span {
-    color: var(--primary-color);
-  }
-
-  .nav__menu__btn {
-    display: none;
-  }
-
-  .nav__links {
-    position: static;
-    padding: 0;
-    flex-direction: row;
-    background-color: transparent;
-    transform: none;
-  }
-
-  .nav__links a {
-    padding-block: 5px;
-    color: var(--text-dark);
-    border-bottom: 4px solid transparent;
-  }
-
-  .nav__links a:hover {
-    border-color: var(--primary-color);
-  }
-
-  .nav__btns {
-    display: flex;
-    flex: 1;
-  }
-
-  .nav__btns .btn {
-    padding: 0.75rem 1.5rem;
-    outline: none;
-    border: none;
-    font-size: 1rem;
-    white-space: nowrap;
-    border-radius: 10px;
-    transition: 0.3s;
-    cursor: pointer;
-  }
-
-  .sign__up {
-    color: var(--text-dark);
-    background-color: transparent;
-  }
-
-  .sign__up:hover {
-    color: var(--primary-color);
-  }
-
-  .sign__in {
-    color: var(--white);
-    background-color: var(--primary-color);
-  }
-
-  .sign__in:hover {
-    background-color: var(--primary-color-dark);
-  }
-
-  .header__container {
-    padding-block: 2rem;
-    grid-template-columns: repeat(2, 1fr);
-    align-items: center;
-  }
-
-  .header__image {
-    grid-area: 1/2/2/3;
-  }
-
-  .header__content :is(h1, p, .bar) {
-    text-align: left;
-  }
-}
-
-@media (width > 1024px) {
-  .header__content form {
-    flex-direction: row;
-  }
-
-  .header__content button {
-    width: fit-content;
-  }
-}
-/* Tambahkan di bagian paling akhir file styles.css */
-
-/* Modal Styles */
 .modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  display: flex; /* Menyusun modal dengan flexbox */
+  justify-content: center; /* Pusatkan konten secara horizontal */
+  align-items: center; /* Pusatkan konten secara vertikal */
+  position: fixed; /* Modal diatur tetap di layar */
+  top: 0; /* Posisikan di bagian atas */
+  left: 0; /* Posisikan di sebelah kiri */
+  width: 100%; /* Lebar penuh */
+  height: 100%; /* Tinggi penuh */
+  background-color: rgba(0, 0, 0, 0.5); /* Latar belakang transparan */
 }
 
 .modal-content {
-  background-color: #fff;
-  margin: 10% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 300px;
-  border-radius: 10px;
+  background-color: var(--white); /* Latar belakang putih untuk konten modal */
+  padding: 20px; /* Ruang di dalam modal */
+  border-radius: 5px; /* Sudut membulat */
+  width: 90%; /* Lebar modal 90% dari layar */
+  max-width: 400px; /* Lebar maksimum modal */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Bayangan */
 }
 
-.close {
-  float: right;
-  font-size: 24px;
-  cursor: pointer;
-  color: #aaa;
+.close-btn {
+  cursor: pointer; /* Menunjukkan bahwa ini bisa diklik */
+  float: right; /* Posisi tombol tutup di kanan atas */
+  font-size: 1.5rem; /* Ukuran font untuk tombol tutup */
+  color: var(--dark-color); /* Warna tombol tutup */
 }
 
-.close:hover {
-  color: #000;
+/* Gaya untuk formulir pendaftaran di dalam modal */
+.modal-content form {
+  display: flex; /* Menggunakan flexbox untuk susunan form */
+  flex-direction: column; /* Kolom untuk input */
 }
 
-/* Kode CSS lainnya */
-
-.destination-description {
-  display: flex; /* Menggunakan flexbox untuk penataan yang lebih baik */
-  flex-wrap: wrap; /* Agar teks bisa melanjutkan ke baris berikutnya jika terlalu panjang */
-  max-width: 100%; /* Mengatur lebar maksimal sesuai ukuran kontainer */
-  padding: 10px; /* Menambahkan padding untuk jarak dari tepi */
-  box-sizing: border-box; /* Agar padding terhitung dalam total lebar */
+.modal-content label {
+  margin: 0.5rem 0 0.2rem; /* Jarak antara label dan input */
 }
 
-.destination-description p {
-  margin: 0; /* Menghapus margin default */
-  line-height: 1.5; /* Mengatur jarak antar baris agar lebih nyaman dibaca */
-  font-size: 16px; /* Ukuran font */
+.modal-content input,
+.modal-content select {
+  padding: 0.5rem; /* Ruang di dalam input */
+  margin-bottom: 1rem; /* Jarak bawah untuk input */
+  border: 1px solid var(--dark-color); /* Border input */
+  border-radius: 4px; /* Sudut membulat untuk input */
 }
 
-.package-description {
-  padding: 20px; /* Memberikan jarak di dalam kontainer */
+.modal-content button {
+  background-color: var(--primary-color); /* Warna tombol */
+  color: var(--white); /* Warna teks tombol */
+  border: none; /* Menghilangkan border */
+  padding: 0.75rem; /* Ruang di dalam tombol */
+  border-radius: 5px; /* Sudut membulat untuk tombol */
+  cursor: pointer; /* Menunjukkan bahwa ini bisa diklik */
+  transition: background-color 0.3s; /* Transisi halus untuk efek hover */
 }
 
-.package {
-  display: flex; /* Menggunakan flexbox untuk penataan */
-  margin-top: 20px; /* Memberikan jarak antar paket */
-}
-
-.package-image {
-  max-width: 300px; /* Mengatur lebar maksimum gambar */
-  margin-right: 20px; /* Memberikan jarak antara gambar dan info */
-}
-
-.package-info {
-  max-width: 600px; /* Mengatur lebar maksimum untuk informasi paket */
-}
-
-.package-info h3 {
-  margin: 0 0 10px; /* Mengatur margin untuk judul paket */
-}
-
-.package-info h4 {
-  margin: 10px 0 5px; /* Mengatur margin untuk subjudul */
-}
-
-.package-info ul {
-  padding-left: 20px; /* Memberikan padding untuk daftar */
-  margin: 0; /* Menghapus margin default */
+.modal-content button:hover {
+  background-color: darkorange; /* Warna saat hover di tombol */
 }
